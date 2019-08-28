@@ -1,8 +1,8 @@
-require_relative '../../config/env.rb'
-require_relative '../../constants.rb'
-require_relative '../../secrets.rb'
-require 'pry'
-require 'sinatra'
+# require_relative '../../config/env.rb'
+# require_relative '../../constants.rb'
+# require_relative '../../secrets.rb'
+# require 'pry'
+# require 'sinatra'
 class ApplicationController < Sinatra::Base
 
 	configure do

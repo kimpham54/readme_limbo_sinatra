@@ -24,6 +24,12 @@ get '/readings'  do
 		end
 	end
 
+	get '/search' do
+		@readings = Reading.where("title LIKE ?", "%#{params[:query]}%")
+		erb :'readings/index'
+	end
+
+
 	get '/readings/:id/edit' do
 		@reading = Reading.find_by(id: params[:id])
 		# return authenticate_user(@reading)
