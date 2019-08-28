@@ -25,15 +25,16 @@ get '/readings'  do
 	end
 
 	get '/readings/:id/edit' do
-		
 		@reading = Reading.find_by(id: params[:id])
 		# return authenticate_user(@reading)
 		# erb :'readings/edit'
-		if @reading
-			erb :'readings/edit'
-		else
-			erb :error, layout: false
-		end
+		authenticate_user(@reading)
+		erb :'readings/edit'
+		# if @reading
+		# 	erb :'readings/edit'
+		# else
+		# 	erb :error
+		# end
 	end
 
 
@@ -41,9 +42,13 @@ get '/readings'  do
 	delete '/readings/:id' do
 		@deletereading = Reading.find_by(id: params[:id])
 		# return authenticate_user(@deletereading)
+		# authenticate_user(@deletereading)
+		# authenticate_user(@reading)
 		if @deletereading
 			@deletereading.destroy
 			redirect "/readings"
+		else
+			erb :error
 		end
 
 	end

@@ -18,6 +18,10 @@ class ApplicationController < Sinatra::Base
 	end
 
 
+	get '/error' do 
+		erb :error
+	end
+
 	helpers do
 		def logged_in?
 			!!session[:user_id]
@@ -35,8 +39,17 @@ class ApplicationController < Sinatra::Base
 
 
 		def authenticate_user(reading)
-			redirect '/' if !reading
-			redirect '/' if current_user != reading.user
+			# authenticate
+			# if !reading
+			# 	@message = "item not found"
+			# 	erb :error
+			# end
+			# if current_user != reading.user
+			# 	@message = "cannot access item"
+			# 	erb :error
+			# end
+			redirect '/error' if !reading
+			redirect '/error' if current_user != reading.user
 		end
 
 

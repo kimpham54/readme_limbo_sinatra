@@ -1,5 +1,5 @@
 <form action="/signup" method="post">
-	<label for ="name">name</label>
+	<label for ="name">Name</label>
 	<input id="name" type="text" name="name"><br />
 	<label for ="username">Username</label>
 	<input id="username" type="text" name="username"><br />
@@ -8,7 +8,7 @@
 	
 	<label for ="password_confirmation">Confirm Password</label>
 	<input id="password_confirmation" type="password" name="password_confirmation">
-	<input type="submit" value="sign up">
+	<input type="submit" value="Sign Up">
 </form>
 
 <% if @user && @user.errors.any? %>
