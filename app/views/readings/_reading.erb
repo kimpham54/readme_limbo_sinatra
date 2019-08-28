@@ -1,0 +1,22 @@
+  <div class="mdc-elevation--z15">
+	<h4>Author: <%= user.name %></h4>
+	<h4>Username: <%= user.username %></h4>
+
+	<p>Title: <%= readingz.title %></p>
+	<p>Url: <%= readingz.url %></p>
+	<p>Notes: <%= readingz.notes %></p>
+	<p>ID: <%= readingz.id %></p>
+	<% if user == current_user %>
+
+	<form action="/readings/<%= readingz.id %>/edit" method ="get">
+		<!-- <input type="hidden" name="_method" value="get"> -->
+		<input type="submit" value="edit">
+	</form>
+
+	<!-- <a href="/readings/<%= readingz.id %>/edit">edit</a> -->
+	<form action="/readings/<%= readingz.id %>" method ="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="delete">
+	</form>
+	<% end %>
+</div>

@@ -1,0 +1,14 @@
+<% if !!@message %>
+<p>uh oh <%= @message %> </p>
+<% end %>
+
+<form action="/readings/<%= @reading.id %>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<label for ="title">title</label>
+	<input id="title" type="text" name="title" value="<%= @reading.title%>"><br />
+	<label for ="url">url</label>
+	<input id="url" type="text" name="url" value="<%= @reading.url%>"><br />
+	<label for ="notes">notes</label>
+	<textarea id="notes" type="textarea" name="notes" cols="30" rows="5"><%= @reading.notes%></textarea><br />
+	<input type="submit" value="submit">
+</form>

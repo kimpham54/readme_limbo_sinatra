@@ -1,0 +1,8 @@
+<h1>welcome<% if logged_in? %>, <%= current_user.username %> <% end %>!</h1> 
+
+<% if !logged_in? %>
+<!-- <h4>log in</h4> -->
+<a href="/login">log in here</a> or <a href="/signup">sign up here</a>
+
+<a href="/readings">readings</a>
+<% end %>

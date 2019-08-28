@@ -1,0 +1,17 @@
+<h1>welcome, <%= current_user.username %>!</h1> 
+
+<h3>one day you'll get through your reading list</h3>
+
+<% if logged_in? %>
+
+		<form action ="/readings/new" method="get" class="newreadings">
+			<!-- <input type="hidden" name="_method" value="delete"> -->
+			<button class="mdc-button mdc-button--outlined" value="newreadings">Add Reading</button>
+		</form>
+<!-- <a href="/readings/new">add a new reading</a> -->
+<% end %>
+
+<% @readings.each do |item| %>
+<%= erb :'readings/_reading', locals: {user: item.user, readingz: item, title: item.title, url: item.url, notes: item.notes}%>
+<!-- locals erb only takes array not item.title? -->
+<% end %>

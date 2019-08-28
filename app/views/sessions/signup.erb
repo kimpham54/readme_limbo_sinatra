@@ -1,0 +1,18 @@
+<form action="/signup" method="post">
+	<label for ="name">name</label>
+	<input id="name" type="text" name="name"><br />
+	<label for ="username">Username</label>
+	<input id="username" type="text" name="username"><br />
+	<label for ="password">Password</label>
+	<input type="password" name="password">
+	
+	<label for ="password_confirmation">Confirm Password</label>
+	<input id="password_confirmation" type="password" name="password_confirmation">
+	<input type="submit" value="sign up">
+</form>
+
+<% if @user && @user.errors.any? %>
+	<% @user.errors.full_messages.each do |e|%>
+		<p><%= e %></p>
+	<% end %>
+<% end %>
