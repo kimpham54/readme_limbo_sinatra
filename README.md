@@ -33,10 +33,6 @@ To end the server session, type `ctrl-c`.
 1. You can delete your own reading items at /readings and clicking on 'delete'.
 
 
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/cyantis/happy_hour_journal.
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
